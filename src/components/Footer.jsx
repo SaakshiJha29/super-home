@@ -11,43 +11,43 @@ function GithubIcon({ className = "w-4 h-4" }) {
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-slate-950 border-t border-slate-900 py-12 px-4 sm:px-6 lg:px-8 relative z-10 text-slate-400 text-sm">
+    <footer className="w-full bg-white border-t border-slate-200/80 py-12 px-4 sm:px-6 lg:px-8 relative z-10 text-slate-600 text-sm">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         
         {/* Left: Branding & Status */}
         <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center">
-              <Activity className="w-4 h-4 text-sky-400" />
+            <div className="w-8 h-8 rounded-lg bg-sky-100 border border-sky-200 flex items-center justify-center">
+              <Activity className="w-4 h-4 text-sky-600" />
             </div>
-            <span className="font-bold text-white text-base tracking-tight">PulseQL</span>
+            <span className="font-extrabold text-slate-900 text-base tracking-tight">PulseQL</span>
           </div>
 
-          <div className="hidden md:block text-slate-800">|</div>
+          <div className="hidden md:block text-slate-300">|</div>
 
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-500 font-medium">
             © {new Date().getFullYear()} PulseQL. Engineered for high-performance API resilience.
           </p>
         </div>
 
         {/* Center: Konami Code Secret Hint */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-[11px] font-mono text-slate-400">
-          <Terminal className="w-3 h-3 text-sky-400" />
-          <span>Secret Access Hint: <code className="text-sky-300 font-bold">↑ ↑ ↓ ↓ ← → ← → B A</code></span>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-[11px] font-mono text-slate-700 font-medium">
+          <Terminal className="w-3.5 h-3.5 text-sky-600" />
+          <span>Secret Access Hint: <code className="text-sky-700 font-bold">↑ ↑ ↓ ↓ ← → ← → B A</code></span>
         </div>
 
         {/* Right: Quick Links & Repo */}
-        <div className="flex items-center gap-4 text-xs font-medium">
-          <a href="#features" className="hover:text-white transition-colors">Features</a>
-          <a href="#sandbox" className="hover:text-white transition-colors">Sandbox</a>
-          <a href="#architecture" className="hover:text-white transition-colors">Architecture</a>
+        <div className="flex items-center gap-4 text-xs font-semibold">
+          <a href="#features" className="hover:text-sky-600 transition-colors">Features</a>
+          <a href="#sandbox" className="hover:text-sky-600 transition-colors">Sandbox</a>
+          <a href="#architecture" className="hover:text-sky-600 transition-colors">Architecture</a>
           <a 
             href="https://github.com/SaakshiJha29/super-home.git" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-slate-300"
+            className="p-2 rounded-lg bg-slate-50 border border-slate-200 hover:text-sky-600 hover:border-sky-300 transition-colors flex items-center gap-1.5 font-mono text-slate-700"
           >
-            <GithubIcon className="w-3.5 h-3.5 text-sky-400" />
+            <GithubIcon className="w-3.5 h-3.5 text-sky-600" />
             <span>GitHub</span>
           </a>
         </div>

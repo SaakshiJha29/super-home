@@ -13,22 +13,22 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-slate-950/80 border-b border-slate-800/80 transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-white/80 border-b border-sky-100/80 shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
           {/* Logo & Badge */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 p-[1px] shadow-[0_0_15px_rgba(14,165,233,0.4)] group-hover:shadow-[0_0_25px_rgba(14,165,233,0.7)] transition-all duration-300">
-              <div className="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center">
-                <Activity className="w-5 h-5 text-sky-400 group-hover:scale-110 transition-transform duration-300" />
+            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 p-[1px] shadow-[0_4px_16px_rgba(14,165,233,0.3)] group-hover:shadow-[0_6px_24px_rgba(14,165,233,0.5)] transition-all duration-300">
+              <div className="w-full h-full bg-white rounded-[11px] flex items-center justify-center">
+                <Activity className="w-5 h-5 text-sky-600 group-hover:scale-110 transition-transform duration-300" />
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
-                Pulse<span className="text-sky-400">QL</span>
+              <span className="text-xl font-extrabold tracking-tight text-slate-900 flex items-center gap-1">
+                Pulse<span className="text-sky-600">QL</span>
               </span>
-              <span className="text-[10px] font-mono tracking-widest text-sky-400/80 uppercase font-semibold">
+              <span className="text-[10px] font-mono tracking-widest text-sky-600/90 uppercase font-bold">
                 Network Sandbox
               </span>
             </div>
@@ -38,55 +38,53 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
             <a 
               href="#features" 
-              className="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900/60 transition-all"
+              className="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50/80 transition-all"
             >
               Features
             </a>
             <a 
               href="#sandbox" 
-              className="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900/60 transition-all flex items-center gap-1.5"
+              className="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50/80 transition-all flex items-center gap-2"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
               Live Sandbox
             </a>
             <a 
               href="#architecture" 
-              className="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900/60 transition-all"
+              className="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50/80 transition-all"
             >
               Architecture
             </a>
             <a 
               href="#transparency" 
-              className="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900/60 transition-all"
+              className="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50/80 transition-all"
             >
               Honesty & Specs
             </a>
           </nav>
 
           {/* External GitHub Repo & Primary CTA */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3">
             <a 
               href="https://github.com/SaakshiJha29/super-home.git" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-slate-800/80 transition-all flex items-center gap-2 text-xs font-mono"
+              className="p-2.5 rounded-xl bg-white border border-slate-200/80 text-slate-700 hover:text-sky-600 hover:border-sky-300 hover:shadow-sm transition-all flex items-center gap-2 text-xs font-mono font-medium"
               title="View GitHub Repository"
             >
-              <GithubIcon className="w-4 h-4 text-sky-400" />
+              <GithubIcon className="w-4 h-4 text-sky-600" />
               <span>Repository</span>
             </a>
 
             <a 
               href="#sandbox" 
-              className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-bold rounded-xl group bg-gradient-to-br from-sky-400 to-sky-600 group-hover:from-sky-400 group-hover:to-sky-500 hover:shadow-[0_0_20px_rgba(56,189,248,0.5)] transition-all duration-300"
+              className="px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md shadow-sky-500/25 hover:shadow-lg hover:shadow-sky-500/35 transition-all duration-300 flex items-center gap-1.5 transform hover:-translate-y-0.5"
             >
-              <span className="relative px-4 py-2.5 transition-all ease-in duration-75 bg-slate-950 rounded-[10px] text-white group-hover:bg-opacity-0 flex items-center gap-1.5">
-                <span>Start Mocking Free</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-              </span>
+              <span>Start Mocking Free</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
 
@@ -94,7 +92,7 @@ export default function Navbar() {
           <div className="flex md:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-900 border border-slate-800 focus:outline-none"
+              className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-sky-600 hover:bg-sky-50 focus:outline-none"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -106,51 +104,51 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-slate-800 bg-slate-950/95 backdrop-blur-2xl px-4 pt-2 pb-6 space-y-3">
+        <div className="md:hidden border-b border-sky-100 bg-white/95 backdrop-blur-2xl px-4 pt-2 pb-6 space-y-3">
           <a
             href="#features"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900"
+            className="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:text-sky-600 hover:bg-sky-50"
           >
             Features
           </a>
           <a
             href="#sandbox"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-base font-medium text-sky-400 hover:text-white hover:bg-slate-900 flex items-center justify-between"
+            className="block px-3 py-2.5 rounded-lg text-base font-semibold text-sky-600 hover:bg-sky-50 flex items-center justify-between"
           >
             <span>Live Sandbox</span>
-            <span className="px-2 py-0.5 text-xs font-mono rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">Interactive</span>
+            <span className="px-2 py-0.5 text-xs font-mono rounded bg-sky-100 text-sky-700 font-bold">Interactive</span>
           </a>
           <a
             href="#architecture"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900"
+            className="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:text-sky-600 hover:bg-sky-50"
           >
             Architecture
           </a>
           <a
             href="#transparency"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900"
+            className="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:text-sky-600 hover:bg-sky-50"
           >
             Honesty & Specs
           </a>
           
-          <div className="pt-4 border-t border-slate-800 flex flex-col gap-3">
+          <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
             <a 
               href="https://github.com/SaakshiJha29/super-home.git" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-full py-2.5 px-4 rounded-xl text-slate-300 hover:text-white bg-slate-900 border border-slate-800 flex items-center justify-center gap-2 text-sm font-mono"
+              className="w-full py-2.5 px-4 rounded-xl text-slate-700 bg-white border border-slate-200 flex items-center justify-center gap-2 text-sm font-mono font-medium shadow-sm"
             >
-              <GithubIcon className="w-4 h-4 text-sky-400" />
+              <GithubIcon className="w-4 h-4 text-sky-600" />
               <span>GitHub Repository</span>
             </a>
             <a 
               href="#sandbox" 
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3 px-4 rounded-xl font-bold text-center bg-gradient-to-r from-sky-400 to-sky-600 text-white shadow-lg shadow-sky-500/20"
+              className="w-full py-3 px-4 rounded-xl font-bold text-center bg-sky-500 hover:bg-sky-600 text-white shadow-md shadow-sky-500/25"
             >
               Start Mocking Free
             </a>
