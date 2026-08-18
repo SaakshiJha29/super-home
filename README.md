@@ -1,8 +1,9 @@
 # ⚡ PulseQL — Real-World API Testing & Mocking Platform
 
 > **Build It Like You Mean It Challenge Entry**  
-> **Repository:** [https://github.com/SaakshiJha29/super-home.git](https://github.com/SaakshiJha29/super-home.git)  
-> **Aesthetic:** Light Blue Glassmorphism (`#0ea5e9`, `#38bdf8`, `#0284c7`) with human-crafted elegance.
+> 🌐 **Live Demo:** [https://super-home-delta.vercel.app/](https://super-home-delta.vercel.app/)  
+> 📦 **GitHub Repository:** [https://github.com/SaakshiJha29/super-home.git](https://github.com/SaakshiJha29/super-home.git)  
+> 🎨 **Aesthetic:** Light Blue Glassmorphism (`#0ea5e9`, `#38bdf8`, `#0284c7`) with human-crafted elegance.
 
 ---
 
@@ -16,6 +17,8 @@ In modern software development, frontend and mobile engineering teams are freque
 
 ### 💡 The Solution
 **PulseQL** provides an instant, edge-backed API testing and mocking platform. Developers can spin up synthetic GraphQL and REST endpoints in milliseconds, throttle network latency on the fly (10ms to 800ms), inject chaos fault profiles, and validate application resilience before shipping to production.
+
+Try out the live web app deployment at [https://super-home-delta.vercel.app/](https://super-home-delta.vercel.app/).
 
 ---
 
@@ -39,6 +42,7 @@ In modern software development, frontend and mobile engineering teams are freque
 
 | Layer | Technology | Purpose |
 | :--- | :--- | :--- |
+| **Live Deployment** | Vercel | Instant global edge CDN distribution at [super-home-delta.vercel.app](https://super-home-delta.vercel.app/) |
 | **Framework** | React 19 + Vite 8 | Microsecond reactive state renders, sub-second HMR, and ultra-fast build output |
 | **Styling** | Tailwind CSS + Glassmorphism | Custom design tokens, light blue palette (`#0ea5e9`, `#38bdf8`), light ambient mesh background (`#f8fafc`) |
 | **Icons** | Lucide React | Modern, clean vector icon suite matching engineering dashboard standards |
@@ -80,7 +84,7 @@ npm run dev
 npm run build
 ```
 
-Open [http://localhost:5173/](http://localhost:5173/) in your browser to view the application.
+Open [http://localhost:5173/](http://localhost:5173/) in your browser to view the application locally or visit the live deployment at [https://super-home-delta.vercel.app/](https://super-home-delta.vercel.app/).
 
 ---
 
@@ -93,4 +97,5 @@ For a detailed breakdown of stack selection, technical trade-offs (prioritizing 
 ## 📄 License & Challenge Attribution
 
 Created as a submission for the **"Build It Like You Mean It" Challenge**.  
+Live Demo: [https://super-home-delta.vercel.app/](https://super-home-delta.vercel.app/)  
 Repository maintained by [SaakshiJha29](https://github.com/SaakshiJha29/super-home).
