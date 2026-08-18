@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Activity, Menu, X, ArrowRight, ShieldCheck, Cpu, Zap, Layers, LogIn, User, Radio } from 'lucide-react';
 import AuthModal from './AuthModal';
-import ThemeToggle from './ThemeToggle';
 
 function GithubIcon({ className = "w-4 h-4" }) {
   return (
@@ -81,10 +80,8 @@ export default function Navbar() {
               </a>
             </nav>
 
-            {/* Actions: GitHub Repo, Theme Toggle, Sign In Button & CTA */}
-            <div className="hidden md:flex items-center space-x-2">
-              <ThemeToggle />
-
+            {/* Actions: GitHub Repo, Sign In Button & CTA */}
+            <div className="hidden md:flex items-center space-x-2.5">
               <a 
                 href="https://github.com/SaakshiJha29/super-home.git" 
                 target="_blank" 
@@ -99,7 +96,7 @@ export default function Navbar() {
               {/* Sign In Option on Navbar */}
               <button
                 onClick={() => setAuthModalOpen(true)}
-                className="px-3 py-2 rounded-xl text-xs font-bold border border-sky-300 bg-sky-50 hover:bg-sky-100 text-sky-700 transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer hover:border-sky-400"
+                className="px-3.5 py-2 rounded-xl text-xs font-bold border border-sky-300 bg-sky-50 hover:bg-sky-100 text-sky-700 transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer hover:border-sky-400"
               >
                 <User className="w-4 h-4 text-sky-600" />
                 <span>Sign In</span>
@@ -115,8 +112,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="flex md:hidden items-center gap-2">
-              <ThemeToggle />
+            <div className="flex md:hidden items-center">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-sky-600 hover:bg-sky-50 focus:outline-none"

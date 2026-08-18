@@ -6,7 +6,7 @@ export default function EdgeMap() {
     {
       id: 'us-east',
       name: 'US-East (N. Virginia)',
-      coords: { x: '28%', y: '35%' },
+      coords: { x: '24%', y: '36%' },
       latency: '12ms',
       uptime: '99.999%',
       rps: '420,000 req/s',
@@ -16,7 +16,7 @@ export default function EdgeMap() {
     {
       id: 'us-west',
       name: 'US-West (Oregon)',
-      coords: { x: '18%', y: '32%' },
+      coords: { x: '14%', y: '32%' },
       latency: '18ms',
       uptime: '99.995%',
       rps: '310,000 req/s',
@@ -26,7 +26,7 @@ export default function EdgeMap() {
     {
       id: 'eu-central',
       name: 'EU-Central (Frankfurt)',
-      coords: { x: '52%', y: '28%' },
+      coords: { x: '51%', y: '28%' },
       latency: '14ms',
       uptime: '100%',
       rps: '380,000 req/s',
@@ -36,7 +36,7 @@ export default function EdgeMap() {
     {
       id: 'ap-south',
       name: 'AP-South (Mumbai)',
-      coords: { x: '72%', y: '48%' },
+      coords: { x: '70%', y: '48%' },
       latency: '24ms',
       uptime: '99.99%',
       rps: '290,000 req/s',
@@ -46,7 +46,7 @@ export default function EdgeMap() {
     {
       id: 'sa-east',
       name: 'SA-East (São Paulo)',
-      coords: { x: '35%', y: '70%' },
+      coords: { x: '32%', y: '68%' },
       latency: '32ms',
       uptime: '99.98%',
       rps: '140,000 req/s',
@@ -61,13 +61,13 @@ export default function EdgeMap() {
     <section id="edge-map" className="py-24 bg-mesh-light relative overflow-hidden border-t border-sky-100">
       
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-sky-200/30 rounded-full blur-[140px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-sky-200/40 rounded-full blur-[140px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100 border border-sky-200 text-sky-700 text-xs font-mono font-bold">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100 border border-sky-200 text-sky-700 text-xs font-mono font-bold shadow-sm">
             <Radio className="w-3.5 h-3.5 text-sky-600 animate-pulse" />
             <span>GLOBAL EDGE TOPOLOGY</span>
           </div>
@@ -83,36 +83,53 @@ export default function EdgeMap() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* SVG Map Visualizer (8 cols) */}
-          <div className="lg:col-span-8 glass-panel rounded-3xl p-6 border border-slate-200/90 shadow-xl relative min-h-[420px] flex flex-col justify-between overflow-hidden bg-white/90">
+          <div className="lg:col-span-8 glass-panel rounded-3xl p-6 border border-slate-200/90 shadow-xl relative min-h-[440px] flex flex-col justify-between overflow-hidden bg-white/95">
             
             {/* Map Header */}
             <div className="flex justify-between items-center pb-4 border-b border-slate-100 relative z-10">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
                 <span className="font-mono text-xs font-bold text-slate-800 uppercase tracking-wider">
-                  Live Network Map
+                  Live Global Map & Edge Routing
                 </span>
               </div>
               <span className="text-[11px] font-mono text-sky-700 bg-sky-50 px-2.5 py-1 rounded-lg border border-sky-200 font-bold">
-                Worldwide Mesh Connected
+                35 PoPs Online
               </span>
             </div>
 
-            {/* Map Canvas Overlay */}
-            <div className="relative w-full h-[320px] my-4 rounded-2xl bg-slate-50 border border-slate-200/60 overflow-hidden flex items-center justify-center">
+            {/* Map Canvas with Crystal-Clear SVG Continents */}
+            <div className="relative w-full h-[340px] my-4 rounded-2xl bg-gradient-to-b from-sky-50/50 via-white to-sky-50/30 border border-sky-100 overflow-hidden flex items-center justify-center shadow-inner">
               
               {/* World Grid Lines */}
-              <div className="absolute inset-0 bg-grid-pattern-light opacity-60"></div>
+              <div className="absolute inset-0 bg-grid-pattern-light opacity-80"></div>
               
-              {/* SVG Connecting Vector Rays */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-40">
-                <path d="M 28% 35% Q 40% 25% 52% 28%" stroke="#0ea5e9" strokeWidth="2" strokeDasharray="4 4" fill="none" className="animate-pulse" />
-                <path d="M 52% 28% Q 62% 38% 72% 48%" stroke="#0ea5e9" strokeWidth="2" strokeDasharray="4 4" fill="none" className="animate-pulse" />
-                <path d="M 28% 35% Q 30% 55% 35% 70%" stroke="#0ea5e9" strokeWidth="2" strokeDasharray="4 4" fill="none" />
-                <path d="M 18% 32% Q 23% 33% 28% 35%" stroke="#0ea5e9" strokeWidth="2" fill="none" />
+              {/* World Map SVG Vector Outlines */}
+              <svg className="absolute inset-0 w-full h-full object-cover opacity-25 text-sky-900 fill-current" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+                {/* North America */}
+                <path d="M 120,80 Q 180,60 260,110 Q 240,180 180,220 Q 140,240 100,160 Z" />
+                <path d="M 150,220 Q 220,240 280,180 Q 260,250 200,260 Z" />
+                {/* South America */}
+                <path d="M 280,270 Q 350,280 370,350 Q 320,440 280,410 Q 260,340 280,270 Z" />
+                {/* Europe */}
+                <path d="M 460,70 Q 560,60 580,130 Q 520,170 470,140 Z" />
+                {/* Africa */}
+                <path d="M 460,160 Q 580,170 590,260 Q 540,360 480,330 Q 450,240 460,160 Z" />
+                {/* Asia */}
+                <path d="M 580,70 Q 820,50 880,160 Q 780,260 660,220 Q 600,160 580,70 Z" />
+                {/* Australia */}
+                <path d="M 780,310 Q 860,300 880,370 Q 820,420 760,380 Z" />
               </svg>
 
-              {/* Region Markers */}
+              {/* SVG Connecting Ray Lines */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none">
+                <path d="M 24% 36% Q 37% 25% 51% 28%" stroke="#0ea5e9" strokeWidth="2" strokeDasharray="5 5" fill="none" className="animate-pulse" />
+                <path d="M 51% 28% Q 60% 38% 70% 48%" stroke="#0ea5e9" strokeWidth="2" strokeDasharray="5 5" fill="none" className="animate-pulse" />
+                <path d="M 24% 36% Q 28% 52% 32% 68%" stroke="#0ea5e9" strokeWidth="2" strokeDasharray="5 5" fill="none" />
+                <path d="M 14% 32% Q 19% 34% 24% 36%" stroke="#0ea5e9" strokeWidth="2" fill="none" />
+              </svg>
+
+              {/* Region Node Markers */}
               {regions.map((region) => (
                 <div
                   key={region.id}
@@ -121,19 +138,19 @@ export default function EdgeMap() {
                   style={{ left: region.coords.x, top: region.coords.y }}
                 >
                   <div className="relative flex items-center justify-center">
-                    <span className={`animate-ping absolute inline-flex h-6 w-6 rounded-full ${region.color} opacity-75`}></span>
+                    <span className={`animate-ping absolute inline-flex h-7 w-7 rounded-full ${region.color} opacity-75`}></span>
                     <span className={`relative inline-flex rounded-full h-4 w-4 ${region.color} border-2 border-white shadow-md group-hover:scale-125 transition-transform`}></span>
                   </div>
                   
-                  {/* Tooltip Label */}
+                  {/* Tooltip Badge */}
                   <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block whitespace-nowrap bg-slate-900 text-white text-[11px] font-mono py-1 px-2.5 rounded-lg shadow-xl border border-slate-700 z-30">
                     {region.name} ({region.latency})
                   </div>
                 </div>
               ))}
 
-              <div className="absolute bottom-3 left-4 text-[10px] font-mono text-slate-400">
-                Click any region marker to inspect live PoP telemetry
+              <div className="absolute bottom-3 left-4 text-[10px] font-mono text-slate-500 font-semibold bg-white/80 px-2 py-0.5 rounded border border-slate-200">
+                Click any node marker to view latency telemetry
               </div>
 
             </div>
