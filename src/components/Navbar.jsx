@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Activity, Menu, X, ArrowRight, ShieldCheck, Cpu } from 'lucide-react';
+import { Activity, Menu, X, ArrowRight, ShieldCheck, Cpu, Zap, Layers } from 'lucide-react';
 
 function GithubIcon({ className = "w-4 h-4" }) {
   return (
@@ -13,7 +13,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-white/80 border-b border-sky-100/80 shadow-sm transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-xl border-b border-sky-100 shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
@@ -28,41 +28,44 @@ export default function Navbar() {
               <span className="text-xl font-extrabold tracking-tight text-slate-900 flex items-center gap-1">
                 Pulse<span className="text-sky-600">QL</span>
               </span>
-              <span className="text-[10px] font-mono tracking-widest text-sky-600/90 uppercase font-bold">
+              <span className="text-[10px] font-mono tracking-widest text-sky-600 uppercase font-bold">
                 Network Sandbox
               </span>
             </div>
           </a>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
+          {/* Desktop Nav Items (Pills with icons & blue borders) */}
+          <nav className="hidden md:flex items-center space-x-2">
             <a 
               href="#features" 
-              className="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50/80 transition-all"
+              className="px-3.5 py-2 rounded-xl text-xs font-bold border border-sky-200 bg-sky-50/70 hover:bg-sky-100 hover:border-sky-400 text-sky-700 transition-all flex items-center gap-1.5 shadow-sm"
             >
-              Features
+              <Zap className="w-4 h-4 text-sky-600" />
+              <span>Features</span>
             </a>
+
             <a 
               href="#sandbox" 
-              className="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50/80 transition-all flex items-center gap-2"
+              className="px-3.5 py-2 rounded-xl text-xs font-bold border border-sky-200 bg-sky-50/70 hover:bg-sky-100 hover:border-sky-400 text-sky-700 transition-all flex items-center gap-1.5 shadow-sm"
             >
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-              </span>
-              Live Sandbox
+              <Activity className="w-4 h-4 text-emerald-500" />
+              <span>Live Sandbox</span>
             </a>
+
             <a 
               href="#architecture" 
-              className="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50/80 transition-all"
+              className="px-3.5 py-2 rounded-xl text-xs font-bold border border-sky-200 bg-sky-50/70 hover:bg-sky-100 hover:border-sky-400 text-sky-700 transition-all flex items-center gap-1.5 shadow-sm"
             >
-              Architecture
+              <Layers className="w-4 h-4 text-sky-600" />
+              <span>Architecture</span>
             </a>
+
             <a 
               href="#transparency" 
-              className="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50/80 transition-all"
+              className="px-3.5 py-2 rounded-xl text-xs font-bold border border-sky-200 bg-sky-50/70 hover:bg-sky-100 hover:border-sky-400 text-sky-700 transition-all flex items-center gap-1.5 shadow-sm"
             >
-              Honesty & Specs
+              <ShieldCheck className="w-4 h-4 text-sky-600" />
+              <span>Honesty & Specs</span>
             </a>
           </nav>
 
@@ -72,7 +75,7 @@ export default function Navbar() {
               href="https://github.com/SaakshiJha29/super-home.git" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl bg-white border border-slate-200/80 text-slate-700 hover:text-sky-600 hover:border-sky-300 hover:shadow-sm transition-all flex items-center gap-2 text-xs font-mono font-medium"
+              className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-sky-600 hover:border-sky-300 hover:shadow-sm transition-all flex items-center gap-2 text-xs font-mono font-medium"
               title="View GitHub Repository"
             >
               <GithubIcon className="w-4 h-4 text-sky-600" />
@@ -80,7 +83,7 @@ export default function Navbar() {
             </a>
 
             <a 
-              href="#sandbox" 
+              href="#auth-callout" 
               className="px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md shadow-sky-500/25 hover:shadow-lg hover:shadow-sky-500/35 transition-all duration-300 flex items-center gap-1.5 transform hover:-translate-y-0.5"
             >
               <span>Start Mocking Free</span>
@@ -108,31 +111,34 @@ export default function Navbar() {
           <a
             href="#features"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:text-sky-600 hover:bg-sky-50"
+            className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-bold border border-sky-200 bg-sky-50 text-sky-700"
           >
-            Features
+            <Zap className="w-4 h-4 text-sky-600" />
+            <span>Features</span>
           </a>
           <a
             href="#sandbox"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-base font-semibold text-sky-600 hover:bg-sky-50 flex items-center justify-between"
+            className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-bold border border-sky-200 bg-sky-50 text-sky-700"
           >
+            <Activity className="w-4 h-4 text-emerald-500" />
             <span>Live Sandbox</span>
-            <span className="px-2 py-0.5 text-xs font-mono rounded bg-sky-100 text-sky-700 font-bold">Interactive</span>
           </a>
           <a
             href="#architecture"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:text-sky-600 hover:bg-sky-50"
+            className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-bold border border-sky-200 bg-sky-50 text-sky-700"
           >
-            Architecture
+            <Layers className="w-4 h-4 text-sky-600" />
+            <span>Architecture</span>
           </a>
           <a
             href="#transparency"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:text-sky-600 hover:bg-sky-50"
+            className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-bold border border-sky-200 bg-sky-50 text-sky-700"
           >
-            Honesty & Specs
+            <ShieldCheck className="w-4 h-4 text-sky-600" />
+            <span>Honesty & Specs</span>
           </a>
           
           <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
@@ -146,7 +152,7 @@ export default function Navbar() {
               <span>GitHub Repository</span>
             </a>
             <a 
-              href="#sandbox" 
+              href="#auth-callout" 
               onClick={() => setMobileMenuOpen(false)}
               className="w-full py-3 px-4 rounded-xl font-bold text-center bg-sky-500 hover:bg-sky-600 text-white shadow-md shadow-sky-500/25"
             >
