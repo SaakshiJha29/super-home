@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Loader from './components/Loader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import InteractiveSandbox from './components/InteractiveSandbox';
@@ -9,8 +10,12 @@ import EasterEgg from './components/EasterEgg';
 import Footer from './components/Footer';
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-sky-500 selection:text-slate-950 flex flex-col justify-between">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-900 font-sans selection:bg-sky-500 selection:text-white flex flex-col justify-between overflow-x-hidden">
+      {loading && <Loader onFinish={() => setLoading(false)} />}
+      
       <div>
         <Navbar />
         <main>
@@ -21,6 +26,7 @@ export default function App() {
           <Architecture />
         </main>
       </div>
+      
       <Footer />
       <EasterEgg />
     </div>
