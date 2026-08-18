@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sliders, Copy, Check, RefreshCw, Terminal, AlertTriangle, Zap, Server, Activity } from 'lucide-react';
+import { Sliders, Copy, Check, RefreshCw, Terminal, AlertTriangle, Zap, Server, Activity, Sparkles } from 'lucide-react';
 
 export default function InteractiveSandbox() {
   const [protocol, setProtocol] = useState('REST API');
@@ -16,6 +16,12 @@ export default function InteractiveSandbox() {
     }, Math.min(latency / 2, 250));
     return () => clearTimeout(timer);
   }, [latency, protocol]);
+
+  // Preset Query Scenarios
+  const applyPreset = (mode, delayMs) => {
+    setProtocol(mode);
+    setLatency(delayMs);
+  };
 
   const getPayload = () => {
     const timestamp = new Date().toISOString();
@@ -111,13 +117,41 @@ export default function InteractiveSandbox() {
             Live Sandbox Inspector
           </h2>
           <p className="text-slate-600 text-base sm:text-lg font-medium">
-            Interact directly with the PulseQL mock engine below. Switch protocols and throttle latency to observe real-time payload transformations.
+            Interact directly with the PulseQL mock engine below. Select sample presets or throttle latency to observe real-time payload transformations.
           </p>
         </div>
 
         {/* Sandbox Card Container */}
         <div className="glass-panel rounded-3xl p-6 md:p-8 max-w-5xl mx-auto shadow-xl relative">
           
+          {/* Preset Query Selector Bar */}
+          <div className="mb-6 pb-4 border-b border-slate-200/80 flex flex-wrap items-center justify-between gap-3">
+            <span className="text-xs font-mono font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
+              <Sparkles className="w-4 h-4 text-sky-600" />
+              One-Click Presets:
+            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                onClick={() => applyPreset('REST API', 120)}
+                className="px-3 py-1.5 rounded-xl text-xs font-mono font-bold bg-white border border-slate-200 text-slate-700 hover:bg-sky-50 hover:border-sky-300 transition-all shadow-2xs"
+              >
+                ⚡ User Telemetry (REST 120ms)
+              </button>
+              <button
+                onClick={() => applyPreset('GraphQL', 45)}
+                className="px-3 py-1.5 rounded-xl text-xs font-mono font-bold bg-white border border-slate-200 text-slate-700 hover:bg-sky-50 hover:border-sky-300 transition-all shadow-2xs"
+              >
+                🚀 Cluster Health (GraphQL 45ms)
+              </button>
+              <button
+                onClick={() => applyPreset('Fault Inject', 450)}
+                className="px-3 py-1.5 rounded-xl text-xs font-mono font-bold bg-amber-50 border border-amber-200 text-amber-800 hover:bg-amber-100 transition-all shadow-2xs"
+              >
+                ⚠️ 503 Fault Injection (450ms)
+              </button>
+            </div>
+          </div>
+
           {/* Controls Bar: Protocols & Latency Slider */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center pb-8 border-b border-slate-200/80">
             

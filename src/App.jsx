@@ -4,6 +4,7 @@ import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import InteractiveSandbox from './components/InteractiveSandbox';
+import EdgeMap from './components/EdgeMap';
 import Features from './components/Features';
 import Transparency from './components/Transparency';
 import Architecture from './components/Architecture';
@@ -25,6 +26,7 @@ export default function App() {
         <main>
           <Hero />
           <InteractiveSandbox />
+          <EdgeMap />
           <Features />
           <Transparency />
           <Architecture />

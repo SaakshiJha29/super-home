@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Activity, Menu, X, ArrowRight, ShieldCheck, Cpu, Zap, Layers, LogIn, User } from 'lucide-react';
+import { Activity, Menu, X, ArrowRight, ShieldCheck, Cpu, Zap, Layers, LogIn, User, Radio } from 'lucide-react';
 import AuthModal from './AuthModal';
+import ThemeToggle from './ThemeToggle';
 
 function GithubIcon({ className = "w-4 h-4" }) {
   return (
@@ -37,58 +38,68 @@ export default function Navbar() {
               </div>
             </a>
 
-            {/* Desktop Nav Items (Pills with icons & blue borders) */}
-            <nav className="hidden md:flex items-center space-x-2">
+            {/* Desktop Nav Items */}
+            <nav className="hidden lg:flex items-center space-x-2">
               <a 
                 href="#features" 
-                className="px-3.5 py-2 rounded-xl text-xs font-bold border border-sky-200 bg-sky-50/70 hover:bg-sky-100 hover:border-sky-400 text-sky-700 transition-all flex items-center gap-1.5 shadow-sm"
+                className="px-3 py-2 rounded-xl text-xs font-bold border border-sky-200 bg-sky-50/70 hover:bg-sky-100 hover:border-sky-400 text-sky-700 transition-all flex items-center gap-1.5 shadow-2xs"
               >
-                <Zap className="w-4 h-4 text-sky-600" />
+                <Zap className="w-3.5 h-3.5 text-sky-600" />
                 <span>Features</span>
               </a>
 
               <a 
                 href="#sandbox" 
-                className="px-3.5 py-2 rounded-xl text-xs font-bold border border-sky-200 bg-sky-50/70 hover:bg-sky-100 hover:border-sky-400 text-sky-700 transition-all flex items-center gap-1.5 shadow-sm"
+                className="px-3 py-2 rounded-xl text-xs font-bold border border-sky-200 bg-sky-50/70 hover:bg-sky-100 hover:border-sky-400 text-sky-700 transition-all flex items-center gap-1.5 shadow-2xs"
               >
-                <Activity className="w-4 h-4 text-emerald-500" />
+                <Activity className="w-3.5 h-3.5 text-emerald-500" />
                 <span>Live Sandbox</span>
               </a>
 
               <a 
-                href="#architecture" 
-                className="px-3.5 py-2 rounded-xl text-xs font-bold border border-sky-200 bg-sky-50/70 hover:bg-sky-100 hover:border-sky-400 text-sky-700 transition-all flex items-center gap-1.5 shadow-sm"
+                href="#edge-map" 
+                className="px-3 py-2 rounded-xl text-xs font-bold border border-sky-200 bg-sky-50/70 hover:bg-sky-100 hover:border-sky-400 text-sky-700 transition-all flex items-center gap-1.5 shadow-2xs"
               >
-                <Layers className="w-4 h-4 text-sky-600" />
+                <Radio className="w-3.5 h-3.5 text-sky-600" />
+                <span>Edge Map</span>
+              </a>
+
+              <a 
+                href="#architecture" 
+                className="px-3 py-2 rounded-xl text-xs font-bold border border-sky-200 bg-sky-50/70 hover:bg-sky-100 hover:border-sky-400 text-sky-700 transition-all flex items-center gap-1.5 shadow-2xs"
+              >
+                <Layers className="w-3.5 h-3.5 text-sky-600" />
                 <span>Architecture</span>
               </a>
 
               <a 
                 href="#transparency" 
-                className="px-3.5 py-2 rounded-xl text-xs font-bold border border-sky-200 bg-sky-50/70 hover:bg-sky-100 hover:border-sky-400 text-sky-700 transition-all flex items-center gap-1.5 shadow-sm"
+                className="px-3 py-2 rounded-xl text-xs font-bold border border-sky-200 bg-sky-50/70 hover:bg-sky-100 hover:border-sky-400 text-sky-700 transition-all flex items-center gap-1.5 shadow-2xs"
               >
-                <ShieldCheck className="w-4 h-4 text-sky-600" />
+                <ShieldCheck className="w-3.5 h-3.5 text-sky-600" />
                 <span>Honesty & Specs</span>
               </a>
             </nav>
 
-            {/* External GitHub Repo, Sign In Button & Primary CTA */}
-            <div className="hidden md:flex items-center space-x-2.5">
+            {/* Actions: GitHub Repo, Theme Toggle, Sign In Button & CTA */}
+            <div className="hidden md:flex items-center space-x-2">
+              <ThemeToggle />
+
               <a 
                 href="https://github.com/SaakshiJha29/super-home.git" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-sky-600 hover:border-sky-300 hover:shadow-sm transition-all flex items-center gap-2 text-xs font-mono font-medium"
+                className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-sky-600 hover:border-sky-300 hover:shadow-sm transition-all flex items-center gap-1.5 text-xs font-mono font-medium"
                 title="View GitHub Repository"
               >
                 <GithubIcon className="w-4 h-4 text-sky-600" />
-                <span>Repo</span>
+                <span className="hidden xl:inline">Repo</span>
               </a>
 
               {/* Sign In Option on Navbar */}
               <button
                 onClick={() => setAuthModalOpen(true)}
-                className="px-3.5 py-2 rounded-xl text-xs font-bold border border-sky-300 bg-sky-50 hover:bg-sky-100 text-sky-700 transition-all flex items-center gap-1.5 shadow-sm cursor-pointer hover:border-sky-400"
+                className="px-3 py-2 rounded-xl text-xs font-bold border border-sky-300 bg-sky-50 hover:bg-sky-100 text-sky-700 transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer hover:border-sky-400"
               >
                 <User className="w-4 h-4 text-sky-600" />
                 <span>Sign In</span>
@@ -96,7 +107,7 @@ export default function Navbar() {
 
               <a 
                 href="#sandbox" 
-                className="px-4 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md shadow-sky-500/25 hover:shadow-lg hover:shadow-sky-500/35 transition-all duration-300 flex items-center gap-1.5 transform hover:-translate-y-0.5"
+                className="px-3.5 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md shadow-sky-500/25 hover:shadow-lg transition-all duration-300 flex items-center gap-1 transform hover:-translate-y-0.5"
               >
                 <span>Start Mocking</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -104,7 +115,8 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="flex md:hidden items-center">
+            <div className="flex md:hidden items-center gap-2">
+              <ThemeToggle />
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-sky-600 hover:bg-sky-50 focus:outline-none"
@@ -137,20 +149,20 @@ export default function Navbar() {
               <span>Live Sandbox</span>
             </a>
             <a
+              href="#edge-map"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-bold border border-sky-200 bg-sky-50 text-sky-700"
+            >
+              <Radio className="w-4 h-4 text-sky-600" />
+              <span>Edge Map</span>
+            </a>
+            <a
               href="#architecture"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-bold border border-sky-200 bg-sky-50 text-sky-700"
             >
               <Layers className="w-4 h-4 text-sky-600" />
               <span>Architecture</span>
-            </a>
-            <a
-              href="#transparency"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-bold border border-sky-200 bg-sky-50 text-sky-700"
-            >
-              <ShieldCheck className="w-4 h-4 text-sky-600" />
-              <span>Honesty & Specs</span>
             </a>
             
             <div className="pt-4 border-t border-slate-100 flex flex-col gap-2.5">
