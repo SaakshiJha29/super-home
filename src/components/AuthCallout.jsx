@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Sparkles, CheckCircle2, UserPlus, LogIn, Key, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, Sparkles, CheckCircle2, UserPlus, LogIn, Key, ShieldCheck, Zap, UserCheck } from 'lucide-react';
 import AuthModal from './AuthModal';
 
 export default function AuthCallout() {
@@ -65,14 +65,14 @@ export default function AuthCallout() {
             <div className="lg:col-span-5 flex justify-center">
               <div
                 onClick={() => setModalOpen(true)}
-                className="glass-panel rounded-3xl p-8 border-2 border-sky-300/80 bg-white/95 shadow-2xl relative max-w-sm w-full cursor-pointer hover:border-sky-500 hover:shadow-[0_12px_40px_rgba(14,165,233,0.3)] transition-all duration-300 group text-center flex flex-col items-center justify-center space-y-5 transform hover:-translate-y-1"
+                className="glass-panel rounded-3xl p-8 border-2 border-sky-300/80 bg-white/95 shadow-2xl relative max-w-sm w-full cursor-pointer hover:border-sky-500 hover:shadow-[0_12px_45px_rgba(14,165,233,0.35)] transition-all duration-300 group text-center flex flex-col items-center justify-center space-y-5 transform hover:-translate-y-1.5"
               >
                 
                 {/* Glowing Clickable Join Icon */}
                 <div className="relative">
-                  <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-sky-400 to-sky-600 p-[1px] shadow-[0_0_30px_rgba(14,165,233,0.4)] group-hover:shadow-[0_0_45px_rgba(14,165,233,0.7)] group-hover:scale-110 transition-all duration-300 flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-sky-400 to-sky-600 p-[1px] shadow-[0_0_30px_rgba(14,165,233,0.4)] group-hover:shadow-[0_0_50px_rgba(14,165,233,0.7)] group-hover:scale-110 transition-all duration-300 flex items-center justify-center">
                     <div className="w-full h-full bg-white rounded-[23px] flex items-center justify-center">
-                      <UserPlus className="w-10 h-10 text-sky-600 group-hover:scale-110 transition-transform" />
+                      <LogIn className="w-10 h-10 text-sky-600 group-hover:scale-110 transition-transform" />
                     </div>
                   </div>
                   
@@ -83,23 +83,24 @@ export default function AuthCallout() {
                   </span>
                 </div>
 
-                {/* Callout Copy */}
+                {/* Callout Copy & Already a user option */}
                 <div className="space-y-2">
                   <span className="px-3 py-1 rounded-full bg-sky-100 text-sky-700 font-mono text-[11px] font-bold uppercase tracking-wider">
-                    CLICK TO JOIN PORTAL
+                    CLICK TO LOGIN
                   </span>
                   
                   <h3 className="text-2xl font-extrabold text-slate-900 group-hover:text-sky-600 transition-colors pt-1">
-                    Sign In / Sign Up
+                    Sign In to Web App
                   </h3>
                   
-                  <p className="text-xs text-slate-500 font-medium leading-relaxed">
-                    Click here to open the developer login portal and discover more.
+                  <p className="text-xs text-sky-700 font-mono font-bold flex items-center justify-center gap-1">
+                    <UserCheck className="w-3.5 h-3.5" />
+                    <span>Already a user? Login to your account</span>
                   </p>
                 </div>
 
-                {/* Action Indicator Pill */}
-                <div className="pt-2">
+                {/* Action Indicator Button */}
+                <div className="pt-1">
                   <div className="px-6 py-3 rounded-2xl bg-sky-500 group-hover:bg-sky-600 text-white font-bold text-xs shadow-md shadow-sky-500/25 flex items-center gap-2 transition-all">
                     <span>Access Console Now</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -118,7 +119,7 @@ export default function AuthCallout() {
       <AuthModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
-        initialTab="login"
+        mode="signin"
       />
     </>
   );

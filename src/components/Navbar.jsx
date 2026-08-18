@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Activity, Menu, X, ArrowRight, ShieldCheck, Cpu, Zap, Layers, LogIn, UserPlus, User } from 'lucide-react';
+import { Activity, Menu, X, ArrowRight, ShieldCheck, Cpu, Zap, Layers, LogIn, User } from 'lucide-react';
 import AuthModal from './AuthModal';
 
 function GithubIcon({ className = "w-4 h-4" }) {
@@ -13,13 +13,6 @@ function GithubIcon({ className = "w-4 h-4" }) {
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const [authTab, setAuthTab] = useState('login');
-
-  const openAuth = (tabName = 'login') => {
-    setAuthTab(tabName);
-    setAuthModalOpen(true);
-    setMobileMenuOpen(false);
-  };
 
   return (
     <>
@@ -79,7 +72,7 @@ export default function Navbar() {
               </a>
             </nav>
 
-            {/* External GitHub Repo, Sign In / Sign Up & Primary CTA */}
+            {/* External GitHub Repo, Sign In Button & Primary CTA */}
             <div className="hidden md:flex items-center space-x-2.5">
               <a 
                 href="https://github.com/SaakshiJha29/super-home.git" 
@@ -92,13 +85,13 @@ export default function Navbar() {
                 <span>Repo</span>
               </a>
 
-              {/* Sign In / Sign Up Option on Navbar */}
+              {/* Sign In Option on Navbar */}
               <button
-                onClick={() => openAuth('login')}
+                onClick={() => setAuthModalOpen(true)}
                 className="px-3.5 py-2 rounded-xl text-xs font-bold border border-sky-300 bg-sky-50 hover:bg-sky-100 text-sky-700 transition-all flex items-center gap-1.5 shadow-sm cursor-pointer hover:border-sky-400"
               >
                 <User className="w-4 h-4 text-sky-600" />
-                <span>Sign In / Sign Up</span>
+                <span>Sign In</span>
               </button>
 
               <a 
@@ -162,11 +155,14 @@ export default function Navbar() {
             
             <div className="pt-4 border-t border-slate-100 flex flex-col gap-2.5">
               <button
-                onClick={() => openAuth('login')}
+                onClick={() => {
+                  setAuthModalOpen(true);
+                  setMobileMenuOpen(false);
+                }}
                 className="w-full py-3 px-4 rounded-xl font-bold text-center border border-sky-300 bg-sky-50 text-sky-700 flex items-center justify-center gap-2 text-sm shadow-sm"
               >
                 <User className="w-4 h-4 text-sky-600" />
-                <span>Sign In / Sign Up</span>
+                <span>Sign In</span>
               </button>
 
               <a 
@@ -187,7 +183,7 @@ export default function Navbar() {
       <AuthModal
         isOpen={authModalOpen}
         onClose={() => setAuthModalOpen(false)}
-        initialTab={authTab}
+        mode="signin"
       />
     </>
   );

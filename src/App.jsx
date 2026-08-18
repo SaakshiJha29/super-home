@@ -9,6 +9,7 @@ import Transparency from './components/Transparency';
 import Architecture from './components/Architecture';
 import AuthCallout from './components/AuthCallout';
 import EasterEgg from './components/EasterEgg';
+import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
       
       <Footer />
       <EasterEgg />
+      <ScrollToTop />
     </div>
   );
 }
